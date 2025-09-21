@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="5;url=https://github.com/exeptionhandler"> <!-- fallback -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #0d1117;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #30363d;
+      border-top: 6px solid #58a6ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .message {
+      font-size: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <div class="message">Redirigiendo a GitHub...</div>
+
+  <script>
+    // Redirige si es navegador con JS habilitado
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      setTimeout(() => {
+        window.location.href = "https://github.com/exeptionhandler";
+      }, 3000); // espera 3s para que se vea la animación
+    }
+  </script>
+</body>
+</html>
